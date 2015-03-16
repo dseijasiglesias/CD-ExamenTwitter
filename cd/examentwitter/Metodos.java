@@ -5,6 +5,8 @@
  */
 package cd.examentwitter;
 
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,15 +30,26 @@ public class Metodos {
     
     /**
      * Constructor con las accesKey
-     */
+     *
     public Metodos(){
         cb.setDebugEnabled(true)
-                .setOAuthConsumerKey("44IX9P6DRLuSdMZGwkd21je9h")
-                .setOAuthConsumerSecret("q5NndPo7M8DYdhFd9WlYuwQLxHH0YCUUQTHMFRNBaB0F8s41AL")
-                .setOAuthAccessToken("154877482-XrH4VUE0GeiLWZf80f8vE8vqbWmdI0adyVD1hR5v")
-                .setOAuthAccessTokenSecret("uL67zpwpMQ1MoO095e6erXS7kweGkvxjtaPbFhDMqQuSh");
+                .setOAuthConsumerKey("AAAAAAAAAAAAAAAAAAAAAA")
+                .setOAuthConsumerSecret("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+                .setOAuthAccessToken("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
+                .setOAuthAccessTokenSecret("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
         
         twitter = new TwitterFactory(cb.build()).getInstance();
+    }
+    */
+    
+    public Metodos(){
+        Authenticator.setDefault(new Authenticator() {
+            
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication ("usuario", "password".toCharArray());
+            }
+        });
     }
     
     /**
