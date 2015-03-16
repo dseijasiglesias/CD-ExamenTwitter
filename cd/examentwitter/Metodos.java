@@ -30,7 +30,8 @@ public class Metodos {
     
     /**
      * Constructor con las accesKey
-     *
+     * Sustituir AAA... BBB... CCC... DDD... por las respectivas keys consegidas
+     */
     public Metodos(){
         cb.setDebugEnabled(true)
                 .setOAuthConsumerKey("AAAAAAAAAAAAAAAAAAAAAA")
@@ -40,8 +41,8 @@ public class Metodos {
         
         twitter = new TwitterFactory(cb.build()).getInstance();
     }
-    */
     
+    /**
     public Metodos(){
         Authenticator.setDefault(new Authenticator() {
             
@@ -51,6 +52,7 @@ public class Metodos {
             }
         });
     }
+    */
     
     /**
      * Metodo para visualizar todo el timeLine del usuario logueado
