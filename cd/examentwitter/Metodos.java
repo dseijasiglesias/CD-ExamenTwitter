@@ -26,7 +26,9 @@ public class Metodos {
     ConfigurationBuilder cb = new ConfigurationBuilder();
     Twitter twitter;
     
-    
+    /**
+     * Constructor con las accesKey
+     */
     public Metodos(){
         cb.setDebugEnabled(true)
                 .setOAuthConsumerKey("44IX9P6DRLuSdMZGwkd21je9h")
@@ -37,6 +39,9 @@ public class Metodos {
         twitter = new TwitterFactory(cb.build()).getInstance();
     }
     
+    /**
+     * Metodo para visualizar todo el timeLine del usuario logueado
+     */
     public void timeLine(){
         
         try {
@@ -51,6 +56,9 @@ public class Metodos {
         }
     }
     
+    /**
+     * Metodo para buscar una determinada secuencia caracteres por todo Twitter
+     */
     public void search(){
         
         try {
@@ -66,6 +74,9 @@ public class Metodos {
         
     }
     
+    /**
+     * Metodo para publicar un tuit publico en el timeline del usuario logueado
+     */
     public void tweet(){
         
         try {
@@ -77,6 +88,10 @@ public class Metodos {
         
     }
     
+    /**
+     * Metodos para escribir mensajes para Twitter, siempre con el limite de 160 caracteres
+     * @return devuelve el String con el tuit, siempre con 160 caracteres o menos
+     */
     public static String tuit(){
         String tuit = null;
         
@@ -90,7 +105,9 @@ public class Metodos {
         return tuit;
     }
     
-    
+    /**
+     * Metodos para mandar un tuit privado a otro usuario de la red
+     */
     public void mp(){
         
         try {
@@ -107,7 +124,10 @@ public class Metodos {
         
     }
     
-    
+    /**
+     * Metodo para pedir por JOptionPane la id de un usuario
+     * @return retorna un String con un nick que el usuario desea buscar
+     */
     public static String recipientId(){
         return JOptionPane.showInputDialog("A quien quiere mandar el mensaje");
     }
