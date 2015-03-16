@@ -25,34 +25,16 @@ import twitter4j.conf.ConfigurationBuilder;
  * @author Seijas
  */
 public class Metodos {
+    
     ConfigurationBuilder cb = new ConfigurationBuilder();
-    Twitter twitter;
+    TwitterFactory tf = new TwitterFactory(cb.build());
+    Twitter twitter = tf.getInstance();
     
     /**
-     * Constructor con las accesKey
-     * Sustituir AAA... BBB... CCC... DDD... por las respectivas keys consegidas
+     * Constructor vacio para inicializar el metodo
      */
     public Metodos(){
-        cb.setDebugEnabled(true)
-                .setOAuthConsumerKey("AAAAAAAAAAAAAAAAAAAAAA")
-                .setOAuthConsumerSecret("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
-                .setOAuthAccessToken("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
-                .setOAuthAccessTokenSecret("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
-        
-        twitter = new TwitterFactory(cb.build()).getInstance();
     }
-    
-    /**
-    public Metodos(){
-        Authenticator.setDefault(new Authenticator() {
-            
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication ("usuario", "password".toCharArray());
-            }
-        });
-    }
-    */
     
     /**
      * Metodo para visualizar todo el timeLine del usuario logueado
